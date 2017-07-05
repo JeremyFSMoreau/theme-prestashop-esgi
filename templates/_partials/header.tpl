@@ -26,9 +26,22 @@
   <div class="header-banner">
     {hook h='displayBanner'}
   </div>
+    <div class="panel_homeLogo">
+
+        <a href="{$urls.base_url}">
+            <div id="logo-background"></div>
+            <div id="logo-container"><img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}"></div>
+        </a>
+    </div>
 {/block}
 
 {block name='header_nav'}
+    {include file='_partials/menu.tpl'}
+
+    {*{hook h='displayNavFullWidth'}*}
+{/block}
+
+{*{block name='header_nav'}
   <nav class="header-nav">
     <div class="container">
         <div class="row">
@@ -55,11 +68,12 @@
 {/block}
 
 {block name='header_top'}
+
   <div class="header-top">
     <div class="container">
        <div class="row">
         <div class="col-md-2 hidden-sm-down" id="_desktop_logo">
-          <a href="{$urls.base_url}">
+          <a href="$urls.base_url">
             <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}">
           </a>
         </div>
@@ -81,4 +95,4 @@
     </div>
   </div>
   {hook h='displayNavFullWidth'}
-{/block}
+{/block}*}

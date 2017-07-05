@@ -27,6 +27,9 @@
 @import "components/errors";
 @import "components/customization-modal";
 @import "components/sitemap";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text');
+
 /*** HEADER ***/
 #header {
   background: white;
@@ -356,4 +359,302 @@
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
+}
+
+/////// CSS POUR PROJET
+
+$vert-projet:#46ff95;
+$gris-projet:#f5f5f5;
+$open-sans:'Open Sans', sans-serif;
+$crimson-text:'Crimson Text', serif;
+
+
+/*#left-site-projet
+{
+  position:fixed;
+  width: 50%;
+  height: 100vh;
+  background: url("../img/background_image.jpg") no-repeat fixed;
+  background-size: contain;
+
+}*/
+
+
+.row-no-padding {
+  [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+#wrapper {
+  padding-top : 0 !important;
+  background-color: $gris-projet;
+}
+
+main{
+  height: 100%;
+}
+
+#footer{
+  background-color: white;
+  position: absolute;
+  width: 100%;
+}
+
+.panel_homeLogo
+{
+  position:fixed;
+  width: 50%;
+  height: 100%;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+@media (min-width: 1415px) and (min-height:625px) {
+  .panel_homeLogo {
+    background-size: contain;
+  }
+}
+
+.logo{
+  width: 80%;
+  margin-top: 70px;
+}
+
+#logo-container {
+  width: 500px;
+  position: absolute;
+  right: 0;
+  top: 35%;
+  text-align: center;
+}
+
+#logo-background
+{
+  background-color: $vert-projet;
+  width: 500px;
+  position: absolute;
+  right: 0;
+  top: 35%;
+  mix-blend-mode: multiply;
+  height: 225px;
+}
+
+.featured-products .product-miniature{
+  margin:0;
+}
+
+.featured-products{
+  background-color: $gris-projet;
+}
+
+.featured-products .product-miniature:hover{
+}
+
+.featured-products .thumbnail-container, .product-miniature .thumbnail-container {
+  margin : 0;
+  width:100%;
+  height:100%;
+  box-shadow: none;
+  background: $gris-projet;
+}@media (min-width: 477px){
+  .featured-products .thumbnail-container, .product-miniature .thumbnail-container
+  {
+    width: 230px;
+  }
+
+}
+
+#products img, .featured-products img, .product-accessories img, .product-miniature img {
+  margin-left: 0px;
+}
+
+#sidebar-wrapper{
+  background-color: white;
+  position: fixed;
+  left: 0;
+  width: 0px;
+  height: 100%;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  //z-index: 1000;
+  left: 300px;
+  margin-left: -300px;
+  overflow-y: auto;
+}
+
+#nav-wrapper.toggled #sidebar-wrapper {
+  width: 300px;
+}
+
+#nav-wrapper.toggled #toggle-menu-theme{
+  margin-left: 305px;
+}
+
+#toggle-menu-theme{
+  position: fixed;
+  font-size: 33px;
+  background: white;
+  width: 35px;
+  height: 35px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.pull-left
+{
+  background: white;
+  cursor: pointer;
+}
+
+
+
+.product-miniature .highlighted-informations-new {
+  position: absolute;
+  bottom: 0;
+  z-index: 0;
+  text-align: center;
+  padding-top: .3125rem;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: $vert-projet;
+  mix-blend-mode: multiply;
+
+}
+
+.description-item{
+  position: absolute;
+  text-align: center;
+  bottom: 10%;
+  z-index: 100;
+  width: 100%;
+  opacity: 0;
+  color:white;
+}
+.description-item h1{
+  color: white;
+}
+
+.product-miniature .highlighted-informations-new, .description-item {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.product-miniature:hover .highlighted-informations-new{
+  opacity: 1;
+}
+
+.product-miniature:hover .description-item {
+  opacity: 1;
+
+}
+
+.product-miniature .thumbnail-container:hover {
+  box-shadow: none
+}
+
+.product-link{
+  position: absolute;
+  bottom: 1.25rem;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+#product #content{
+  max-width: none;
+}
+
+html{
+  overflow-x: hidden;
+}
+
+.product-section{
+  margin-left: 30px;
+}
+
+main{
+  background-color: $gris-projet;
+}
+
+.search-widget {
+  float: left;
+  margin-left: 10px;
+}
+
+.top-menu li {
+  margin-left: -30px;
+}
+
+.input-wrapper{
+  width: 100%;
+}
+
+.links ul{
+  padding-left:15px;
+}
+
+*{
+  font-family: $open-sans;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: $crimson-text !important;
+}
+
+#search-form{
+  width: 96%;
+}
+
+#not-found{
+  text-align: center;
+}
+
+#products .page-not-found, #pagenotfound .page-not-found {
+  max-width: 800px;
+}
+
+.block-social .social-link{
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: #ebebeb;
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin: 0.125rem;
+  cursor: pointer;
+}
+.block-social .social-link:hover{
+  background-color: #2fb5d2;
+}
+.block-social .social-link a {
+  display: block;
+  height: 100%;
+  white-space: nowrap;
+  text-indent: 100%;
+  overflow: hidden;
+}
+
+.block-social{
+  text-align: left;
+}
+
+.page-my-account #content .links a span.link-item {
+  display: flex;
+  box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.1);
+  background: $vert-projet;
+  padding: 1rem;
+  flex-direction: column;
+  width: 250px;
+  height: 150px;
+}
+
+#my-account-section{
+  //margin-left: 30px;
 }

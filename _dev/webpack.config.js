@@ -28,7 +28,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var plugins = [];
 
-var production = true;
+var production = false;
 
 if (production) {
   plugins.push(
@@ -68,7 +68,7 @@ module.exports = {
         "css?sourceMap!postcss!sass?sourceMap"
       )
     }, {
-      test: /.(png|woff(2)?|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/,
+      test: /.(png|woff(2)?|eot|ttf|svg|jpg)(\?[a-z0-9=\.]+)?$/,
       loader: 'file-loader?name=../css/[hash].[ext]'
     }, {
       test: /\.css$/,

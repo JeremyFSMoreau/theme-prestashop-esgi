@@ -23,13 +23,24 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
-
-{block name='block_social'}
-  <div class="block-social col-lg-4 col-md-12 col-sm-12">
-    <ul>
-      {foreach from=$social_links item='social_link'}
-        <li class="{$social_link.class}"><a href="{$social_link.url}" target="_blank">{$social_link.label}</a></li>
-      {/foreach}
-    </ul>
-  </div>
-{/block}
+<div class="row">
+    <div class="col-md-12">
+        {block name='block_social'}
+            <div class="block-social">
+                {assign var=i value=0}
+                <div class="col-md-12">
+                    {foreach from=$social_links item='social_link'}
+                    {if $i == 4}
+                </div>
+                <div class="col-md-12">
+                    {assign var=i value=0}
+                    {/if}
+                    <div class="{$social_link.class} social-link"><a href="{$social_link.url}" target="_blank">{$social_link.label}</a></div>
+                    {assign var=i value=$i+1}
+                    {/foreach}
+                </div>
+            </div>
+        {/block}
+    </div>
+</div>
+<br>

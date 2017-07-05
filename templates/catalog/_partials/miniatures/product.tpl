@@ -22,7 +22,7 @@
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-{block name='product_miniature_item'}
+{*{block name='product_miniature_item'}
   <article class="product-miniature js-product-miniature" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product">
     <div class="thumbnail-container">
       {block name='product_thumbnail'}
@@ -91,4 +91,58 @@
     </div>
 
   </article>
+{/block}*}
+
+{block name='product_miniature_item'}
+    <article class="product-miniature js-product-miniature" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product">
+
+        <div class="thumbnail-container">
+
+            {block name='product_thumbnail'}
+                <a href="{$product.url}" class="thumbnail product-thumbnail">
+                    <img
+                            src = "{$product.cover.bySize.home_default.url}"
+                            alt = "{$product.cover.legend}"
+                            data-full-size-image-url = "{$product.cover.large.url}"
+                    >
+                </a>
+            {/block}
+
+            {*<div class="product-description">
+                {block name='product_name'}{/block}
+                {block name='product_price_and_shipping'}{/block}
+
+                {block name='product_reviews'}{/block}
+            </div>*}
+
+            {*{block name='product_flags'}
+                <ul class="product-flags">
+                    {foreach from=$product.flags item=flag}
+                        <li class="{$flag.type}">{$flag.label}</li>
+                    {/foreach}
+                </ul>
+            {/block}*}
+
+            <a href="{$product.url}">
+                <div class="highlighted-informations-new">
+                    {block name='quick_view'}
+
+                    {/block}
+                    {block name='product_variants'}
+                        {if $product.main_variants}
+                            {include file='catalog/_partials/variant-links.tpl' variants=$product.main_variants}
+                        {/if}
+                    {/block}
+                </div>
+            </a>
+            <div class="description-item">
+                <h1 class="h3 product-title" itemprop="name">{$product.name|truncate:30:'...'}</h1>
+                <span itemprop="price" class="price">{$product.price}</span>
+                <a class="quick-view" href="#" data-link-action="quickview">
+                    <i class="material-icons search">&#xE417;</i>
+                </a>
+            </div>
+
+
+    </article>
 {/block}

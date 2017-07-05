@@ -24,8 +24,14 @@
  *}
 {extends file='page.tpl'}
 
-{block name='page_title'}
+{*{block name='page_title'}
   {$page.title}
+{/block}*}
+
+{block name='page_header_container'}
+    <header class="page-header">
+      <h1 id="not-found">{$page.title}</h1>
+    </header>
 {/block}
 
 {block name='page_content_container'}

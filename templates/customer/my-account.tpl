@@ -28,8 +28,9 @@
   {l s='Your account' d='Shop.Theme.Customeraccount'}
 {/block}
 
+
 {block name='page_content'}
-  <div class="row">
+<div id="my-account-section">
     <div class="links">
 
       <a class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="identity-link" href="{$urls.pages.identity}">
@@ -91,16 +92,24 @@
         </a>
       {/if}
 
+      <a class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="returns-link" href="{$logout_url}">
+          <span class="link-item">
+            <i class="material-icons">&#xE888;</i>
+              {l s='Sign out' d='Shop.Theme.Actions'}
+          </span>
+      </a>
+
       {block name='display_customer_account'}
         {hook h='displayCustomerAccount'}
       {/block}
 
     </div>
-  </div>
+</div>
 {/block}
 
 
-{block name='page_footer'}
+
+{*{block name='page_footer'}
   {block name='my_account_links'}
     <div class="text-xs-center">
       <a href="{$logout_url}" >
@@ -108,4 +117,4 @@
       </a>
     </div>
   {/block}
-{/block}
+{/block}*}

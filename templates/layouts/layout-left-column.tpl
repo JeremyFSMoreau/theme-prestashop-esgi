@@ -26,10 +26,21 @@
 
 {block name='right_column'}{/block}
 
-{block name='content_wrapper'}
-  <div id="content-wrapper" class="left-column col-xs-12 col-sm-8 col-md-9">
-    {block name='content'}
-      <p>Hello world! This is HTML5 Boilerplate.</p>
+
+    {block name="left_column"}
+        <div id="left-site-projet" class="row row-no-padding">
+            <div id="left-column" class="left-column col-xs-12 col-sm-6 col-md-6">
+            </div>
+        </div>
     {/block}
-  </div>
+
+
+{block name='content_wrapper'}
+    <div id="right-site-projet" class="row row-no-padding">
+      <div id="content-wrapper" class="right-column col-xs-12 col-sm-6 col-md-6">
+        {block name='content'}
+          <p>Hello world! This is HTML5 Boilerplate.</p>
+        {/block}
+      </div>
+    </div>
 {/block}

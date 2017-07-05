@@ -53,7 +53,7 @@
       {/block}
 
       <section id="wrapper">
-        <div class="container">
+        <div class="container-fluid">
           {block name='breadcrumb'}
             {include file='_partials/breadcrumb.tpl'}
           {/block}
@@ -88,11 +88,12 @@
         </div>
       </section>
 
-      <footer id="footer">
+
         {block name="footer"}
-          {include file="_partials/footer.tpl"}
+            <footer id="footer">
+                {include file="_partials/footer.tpl"}
+            </footer>
         {/block}
-      </footer>
 
     </main>
 
