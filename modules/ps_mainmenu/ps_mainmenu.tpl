@@ -40,7 +40,7 @@
     {/if}
 {/function}
 
-<div class="menu col-lg-12 col-md-12 js-top-menu position-static hidden-sm-down" id="_desktop_top_menu">
+<div class="menu col-lg-12 col-md-12 js-top-menu position-static hidden-sm-down">
     {menu nodes=$menu.children}
     <div class="clearfix"></div>
 </div>

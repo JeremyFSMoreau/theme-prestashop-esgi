@@ -26,9 +26,11 @@
   <div class="modal-dialog" role="document">
    <div class="modal-content">
      <div class="modal-header">
+
        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
          <span aria-hidden="true">&times;</span>
        </button>
+         <h1 class="h1">{$product.name}</h1>
      </div>
      <div class="modal-body">
       <div class="row">
@@ -42,12 +44,13 @@
           </div>
         </div>
         <div class="col-md-6 col-sm-6">
-          <h1 class="h1">{$product.name}</h1>
-          {block name='product_prices'}
+
+          {*{block name='product_prices'}
             {include file='catalog/_partials/product-prices.tpl'}
-          {/block}
+          {/block}*}
           {block name='product_description_short'}
             <div id="product-description-short" itemprop="description">{$product.description_short nofilter}</div>
+              <hr>
           {/block}
           {block name='product_buy'}
             <div class="product-actions">
@@ -56,11 +59,12 @@
                 <input type="hidden" name="id_product" value="{$product.id}" id="product_page_product_id">
                 <input type="hidden" name="id_customization" value="{$product.id_customization}" id="product_customization_id">
                 {block name='product_variants'}
-                  {include file='catalog/_partials/product-variants.tpl'}
+                  {*{include file='catalog/_partials/product-variants.tpl'}*}
                 {/block}
 
                 {block name='product_add_to_cart'}
                   {include file='catalog/_partials/product-add-to-cart.tpl'}
+                    <hr>
                 {/block}
 
                 {block name='product_refresh'}

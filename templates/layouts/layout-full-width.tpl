@@ -31,13 +31,7 @@
 {block name='breadcrumb'}{/block}
 {block name='content_wrapper'}
     <div class="row row-no-padding">
-        <div class="left-column col-xs-12 col-sm-6 col-md-6">
-            <div id="left-site-projet" class="affix">
-
-            </div>
-        </div>
-
-        <div id="right-site-projet" class="left-column col-xs-12 col-sm-6 col-md-6">
+        <div id="right-site-projet">
             <div id="content-wrapper" >
                 {block name='content'}
                     <p>Hello world! This is HTML5 Boilerplate.</p>

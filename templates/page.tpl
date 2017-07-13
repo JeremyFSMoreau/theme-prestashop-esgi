@@ -51,6 +51,7 @@
           <!-- Footer content -->
         {/block}
       </footer>*}
+
     {/block}
 
   </section>

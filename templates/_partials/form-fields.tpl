@@ -139,7 +139,7 @@
               pattern=".{literal}{{/literal}5,{literal}}{/literal}"
               {if $field.required}required{/if}
             >
-            <span class="input-group-btn">
+            {*<span class="input-group-btn">
               <button
                 class="btn"
                 type="button"
@@ -149,7 +149,7 @@
               >
                 {l s='Show' d='Shop.Theme.Actions'}
               </button>
-            </span>
+            </span>*}
           </div>
         {/block}
 
@@ -183,7 +183,7 @@
     <div class="col-md-3 form-control-comment">
       {block name='form_field_comment'}
         {if (!$field.required && !in_array($field.type, ['radio-buttons', 'checkbox']))}
-         {l s='Optional' d='Shop.Forms.Labels'}
+         &nbsp;&nbsp;{l s='Optional' d='Shop.Forms.Labels'}
         {/if}
       {/block}
     </div>

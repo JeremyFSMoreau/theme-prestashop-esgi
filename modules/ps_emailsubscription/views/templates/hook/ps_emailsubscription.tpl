@@ -26,11 +26,10 @@
 <br><br>
 <div class="row">
     <div class="col-md-12">
-        <div class="block_newsletter">
-            <p class="col-md-12 col-xs-12">{l s='Get our latest news and special sales' d='Shop.Theme'}</p>
-            <div class="col-md-12 col-xs-12">
+        <div class="block_newsletter hidden-sm-down">
+            <p>{l s='Get our latest news and special sales' d='Shop.Theme'}</p>
                 <form action="{$urls.pages.index}#footer" method="post">
-                    <div class="col-md-12">
+                    <div>
                         <div class="input-wrapper">
                             <input
                                     name="email"
@@ -38,19 +37,8 @@
                                     value="{$value}"
                                     placeholder="{l s='Your email address' d='Shop.Forms.Labels'}"
                             >
-                        </div><br>
-                        <input
-                                class="btn btn-primary pull-xs-right hidden-xs-down col-md-12"
-                                name="submitNewsletter"
-                                type="submit"
-                                value="{l s='Subscribe' d='Shop.Theme.Actions'}"
-                        ><br><br>
-                        <input
-                                class="btn btn-primary pull-xs-right hidden-sm-up col-md-12"
-                                name="submitNewsletter"
-                                type="submit"
-                                value="{l s='OK' d='Shop.Theme.Actions'}"
-                        ><br>
+                            <button type="submit" name="submitNewsletter"><i class="material-icons">email</i></button>
+                        </div>
 
                         <input type="hidden" name="action" value="0">
                         <div class="clearfix"></div>
@@ -66,7 +54,6 @@
                         {/if}
                     </div>
                 </form>
-            </div>
         </div>
     </div>
 </div>

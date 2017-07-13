@@ -1,10 +1,10 @@
 <div class="row">
     <div class="col-md-11">
-        <div id="_desktop_user_info">
+        <div id="">
           <div class="user-info">
             {if $logged}
               <a
-                class="logout hidden-sm-down"
+                class="logout"
                 href="{$logout_url}"
                 rel="nofollow"
               >
@@ -16,9 +16,7 @@
                 href="{$my_account_url}"
                 title="{l s='View my customer account' d='Shop.Theme.Customeraccount'}"
                 rel="nofollow"
-              >
-                <i class="material-icons hidden-md-up logged">&#xE7FF;</i>
-                <span class="hidden-sm-down">{$customerName}</span>
+              > <span class="">{$customerName}</span>
               </a>
             {else}
               <a
@@ -27,7 +25,7 @@
                 rel="nofollow"
               >
                 <i class="material-icons">&#xE7FF;</i>
-                <span class="hidden-sm-down">{l s='Sign in' d='Shop.Theme.Actions'}</span>
+                <span class="">{l s='Sign in' d='Shop.Theme.Actions'}</span>
               </a>
             {/if}
           </div>

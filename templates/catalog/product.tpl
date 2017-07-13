@@ -44,27 +44,33 @@
 		<meta property="product:weight:units" content="{$product.weight_unit}">
 	{/if}
 {/block}
+{block name='header_banner'}
+	<div class="header-banner">
+        {hook h='displayBanner'}
+	</div>
+	<div class="panel_homeLogo product-cover">
+		<div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
+			<i class="material-icons zoom-in">&#xE8FF;</i>
+		</div>
+	</div>
+{/block}
+
 
 {block name='content'}
 	<style>
 		.panel_homeLogo {
-			background-image: url('{$product.cover.large.url}');
+			background-image: url('{$product.cover.bySize.medium_default.url}');
 			background-size: contain;
 		}
 
 		#logo-background,#logo-container {
-			visibility: hidden;
+			display: none;
 		}
-
 	</style>
 	<section id="main" class="product-section" itemscope itemtype="https://schema.org/Product">
 		<meta itemprop="url" content="{$product.url}">
 
-		<div class="row">
-			<div class="col-md-11">
-				{include file='_partials/breadcrumb.tpl'}
-			</div>
-		</div>
+
 		<div class="row">
 			<div class="col-md-11">
 				{block name='page_content_container'}
@@ -89,6 +95,13 @@
 					</section>
 				{/block}
 			</div>
+
+			<div class="row">
+				<div class="col-md-11">
+                    {include file='_partials/breadcrumb-product.tpl'}
+				</div>
+			</div>
+
 			<div class="col-md-11">
 				{block name='page_header_container'}
 					{block name='page_header'}
@@ -110,6 +123,21 @@
 						{/block}
 					{/if}
 
+                    {block name='product_availability'}
+						<span id="product-availability">
+						  {if $product.show_availability && $product.availability_message}
+							  {if $product.availability == 'available'}
+								  <i class="material-icons product-available">&#xE5CA;</i>
+							{elseif $product.availability == 'last_remaining_items'}
+							  <i class="material-icons product-last-items">&#xE002;</i>
+							{else}
+							  <i class="material-icons product-unavailable">&#xE14B;</i>
+							  {/if}
+							  {$product.availability_message}
+						  {/if}
+            			</span>
+						<hr>
+                    {/block}
 
 					<div class="product-actions">
 						{block name='product_buy'}
@@ -120,9 +148,9 @@
 								<input type="hidden" name="id_customization" value="{$product.id_customization}"
 									   id="product_customization_id">
 
-								{block name='product_variants'}
+								{*{block name='product_variants'}
 									{include file='catalog/_partials/product-variants.tpl'}
-								{/block}
+								{/block}*}
 
 								{block name='product_pack'}
 									{if $packItems}
@@ -140,11 +168,9 @@
 								{block name='product_discounts'}
 									{include file='catalog/_partials/product-discounts.tpl'}
 								{/block}
-								{block name='product_prices'}
-									{include file='catalog/_partials/product-prices.tpl'}
-								{/block}
 								{block name='product_add_to_cart'}
 									{include file='catalog/_partials/product-add-to-cart.tpl'}
+									<hr>
 								{/block}
 
 

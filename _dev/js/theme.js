@@ -67,4 +67,7 @@ $(document).ready(() => {
   topMenu.init();
   productMinitature.init();
   productSelect.init();
+
 });
+
+

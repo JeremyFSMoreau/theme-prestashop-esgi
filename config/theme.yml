@@ -57,11 +57,12 @@ global_settings:
      - modulebackground
   hooks:
     modules_to_hook:
-      displayNav1:
+      displayNav:
         - modulebackground
-      displayNav2:
+      displayNav1:
         - ps_currencyselector
         - ps_languageselector
+      displayNav2:
         - ps_searchbar
         - ps_shoppingcart
         - ps_customersignin
@@ -72,10 +73,9 @@ global_settings:
       displayFooter:
         - ps_socialfollow
         - ps_linklist
-        - ps_customeraccountlinks
-        - ps_contactinfo
       displayLeftColumn:
         - ps_categorytree
+      displayRightColumn:
         - ps_facetedsearch
       displaySearch:
         - ps_searchbar
@@ -127,8 +127,8 @@ global_settings:
 
 theme_settings:
   default_layout: layout-full-width
-#  layouts:
-#    category: layout-left-column
+  layouts:
+    category: layout-right-column
 #    best-sales: layout-left-column
 #    new-products: layout-left-column
 #    prices-drop: layout-left-column

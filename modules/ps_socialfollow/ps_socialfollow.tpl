@@ -26,7 +26,17 @@
 <div class="row">
     <div class="col-md-12">
         {block name='block_social'}
-            <div class="block-social">
+            <h3 class="h3 hidden-sm-down">{l s='Nous suivre' d='Shop.Theme.SocialFollow'}</h3>
+            <div class="title clearfix hidden-md-up" data-target="#block-social"
+                 data-toggle="collapse">
+                <i class="material-icons add">&#xE146;</i><span class="h3">{l s='Nous suivre' d='Shop.Theme.SocialFollow'}</span>
+                <span class="pull-xs-right">
+          <span class="navbar-toggler collapse-icons">
+          </span>
+        </span>
+            </div>
+            <div id="block-social" aria-expanded="true" class="collapse in">
+
                 {assign var=i value=0}
                 <div class="col-md-12">
                     {foreach from=$social_links item='social_link'}

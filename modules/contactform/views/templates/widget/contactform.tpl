@@ -55,7 +55,7 @@
             </select>
           </div>
           <span class="col-md-3 form-control-comment">
-            {l s='optional' d='Shop.Forms.Help'}
+            &nbsp;&nbsp;{l s='optional' d='Shop.Forms.Help'}
           </span>
         </div>
       {/if}
@@ -67,7 +67,7 @@
             <input type="file" name="fileUpload" class="filestyle" data-buttonText="{l s='Choose file' d='Shop.Theme.Actions'}">
           </div>
           <span class="col-md-3 form-control-comment">
-            {l s='optional' d='Shop.Forms.Help'}
+            &nbsp;&nbsp;{l s='optional' d='Shop.Forms.Help'}
           </span>
         </div>
       {/if}
@@ -86,7 +86,7 @@
 
     </section>
 
-    <footer class="form-footer text-xs-right">
+    <footer class="form-group text-xs-right">
       <input class="btn btn-primary" type="submit" name="submitMessage" value="{l s='Send' d='Shop.Theme.Actions'}">
     </footer>
 

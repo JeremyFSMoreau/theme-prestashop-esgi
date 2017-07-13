@@ -24,46 +24,82 @@
  *}
 {extends file=$layout}
 
-{block name='content'}
-  <section id="main">
-
-    {block name='product_list_header'}
-      <h2 class="h2">{$listing.label}</h2>
+{if $page.page_name=='category'}
+    {block name='header'}
+        {include file='_partials/header-category.tpl'}
     {/block}
+{/if}
+{block name='notifications'}
+{/block}
+{block name='breadcrumb'}
+{/block}
 
-    <section id="products">
-      {if $listing.products|count}
+{block name="footer"}
+{/block}
 
-        <div id="">
-          {block name='product_list_top'}
-            {include file='catalog/_partials/products-top.tpl' listing=$listing}
-          {/block}
-        </div>
+{block name="left_column"}
+{/block}
 
-        {block name='product_list_active_filters'}
-          <div id="" class="hidden-sm-down">
-            {$listing.rendered_active_filters nofilter}
-          </div>
+{block name="right_column"}
+    <div id="right-column-category">
+        {if $page.page_name == 'product'}
+            {hook h='displayRightColumnProduct'}
+        {else}
+            {hook h="displayRightColumn"}
+        {/if}
+    </div>
+{/block}
+
+{block name="right_column"}
+{/block}
+
+{block name="content_wrapper"}
+    <div id="content-wrapper">
+    {block name='content'}
+      <section id="main">
+
+        {block name='product_list_header'}
+          <h2 class="h2">{$listing.label}</h2>
         {/block}
 
-        <div id="">
-          {block name='product_list'}
-            {include file='catalog/_partials/products.tpl' listing=$listing}
-          {/block}
-        </div>
+        <section id="products">
+          {if $listing.products|count}
 
-        <div id="js-product-list-bottom">
-          {block name='product_list_bottom'}
-            {include file='catalog/_partials/products-bottom.tpl' listing=$listing}
-          {/block}
-        </div>
+            <div id="">
+              {block name='product_list_top'}
+                {include file='catalog/_partials/products-top.tpl' listing=$listing}
+              {/block}
+            </div>
 
-      {else}
+            {if $page.page_name=='category'}
+            <div id="">
+              {block name='product_list'}
+                {include file='catalog/_partials/products-category.tpl' listing=$listing}
+              {/block}
+            </div>
+            {/if}
 
-        {include file='errors/not-found.tpl'}
+            <div id="js-product-list-bottom">
+              {block name='product_list_bottom'}
+                {include file='catalog/_partials/products-bottom.tpl' listing=$listing}
+              {/block}
+            </div>
 
-      {/if}
-    </section>
+          {else}
 
-  </section>
+            {include file='errors/not-found.tpl'}
+
+          {/if}
+        </section>
+
+      </section>
+    {/block}
+    </div>
+    {if $page.page_name=='category'}
+    <style>
+        .panel_homeLogoCategory{
+            background-image: url('{$category.image.large.url}');
+        }
+    </style>
+    {/if}
 {/block}
